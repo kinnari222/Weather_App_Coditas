@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import LeftContainer from "./LeftContainer";
 import RightContainer from "./RightContainer";
 import "../styles.css";
+import WeatherIcon from "../images/WeatherIcon.svg";
 
 const TempApp = () => {
   const [search, setSearch] = useState("");
@@ -24,15 +25,19 @@ const TempApp = () => {
 
   const weeklyData = dailyData?.shift();
 
+  console.log("weeklyData : ", weeklyData);
+
   return (
-    <div className="mainContainer">
-      <LeftContainer weeklyData={weeklyData} dailyData={dailyData} />
-      <RightContainer
-        weatherData={weatherData}
-        search={search}
-        onSearchChange={(value) => setSearch(value)}
-      />
-    </div>
+    <>
+      <div className="mainContainer">
+        <LeftContainer weeklyData={weeklyData} dailyData={dailyData} />
+        <RightContainer
+          weatherData={weatherData}
+          search={search}
+          onSearchChange={(value) => setSearch(value)}
+        />
+      </div>
+    </>
   );
 };
 

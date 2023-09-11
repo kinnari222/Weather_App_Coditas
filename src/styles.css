@@ -1,6 +1,7 @@
 .mainContainer {
   display: flex;
   flex-direction: row;
+  height: 100vh;
 }
 
 .left-side {
@@ -11,8 +12,15 @@
   justify-content: space-evenly;
 }
 
-.weatherStyle {
+.weatherIconStyle {
   width: fit-content;
+}
+
+.weatherStyle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .degreeMainStyle {
@@ -53,12 +61,31 @@
   color: #ffffff;
 } 
 
-@media only screen and (max-width: 960px) {
-  .weatherDetailsMain { width: 960px; }
+@media only screen and (max-width: 768px) {
+    /* .weatherDetailsMain { width: 600px; } */
+    .mainContainer {
+      display: flex;
+      flex-direction: column-reverse;
+      height: unset;
+    }
+    .right-side {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border: unset !important;
+    }
+
+    .left-side {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
 }
 
 .right-side {
-  padding-left: 40px;
+  padding: 0 40px;
   border: 0.5px solid #FFF;
   backdrop-filter: blur(21px);
   box-shadow: -5px -5px 250px 0px rgba(255, 255, 255, 0.02) inset;
@@ -89,6 +116,20 @@
   color: #ffffff;
   justify-content: center;
   margin-bottom: 20px;
+}
+
+.wrapperSearch {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 4%;
 }
 
 .inputField {
@@ -154,12 +195,13 @@
 }
 
 .card {
+  width: 70% !important;
   display: flex !important;
   align-items: center;
   flex-direction: column;
   padding: 20px;
   background-color: rgb(220, 191, 215);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
   border-radius: 10px;
 }
 

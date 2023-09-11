@@ -9,25 +9,28 @@ import SearchIcon from "@mui/icons-material/Search";
 const RightContainer = ({ onSearchChange, search, weatherData }) => {
   return (
     <div className="right-side">
-      <input
-        type="Search"
-        value={search}
-        className="inputField"
-        onChange={(event) => {
-          onSearchChange(event.target.value);
-        }}
-      />
-      <SearchIcon />
+      <div className="wrapperSearch">
+        <input
+          type="Search"
+          value={search}
+          className="inputField"
+          onChange={(event) => {
+            onSearchChange(event.target.value);
+          }}
+        />
+        <SearchIcon className="searchIcon"/>
+      </div>
+      
       <p>{weatherData?.location?.name}</p>
 
       <div className="cardContainerRight">
         <DetailDayCard />
       </div>
       
-      <div className="infoStyle">
+      {/* <div className="infoStyle">
         <img src={Line} />
         <img src={InfoIcon} />
-      </div>
+      </div> */}
 
       <div className="graphStyle">
         <div>

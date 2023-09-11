@@ -16,13 +16,15 @@ const LeftContainer = ({ weeklyData, dailyData }) => {
 
   return (
     <div className="left-side">
-      <img src={WeatherIcon} alt="Weather Icon" className="weatherStyle" />
-      <div className="degreeMainStyle">
-        <div className="tempStyle">{weeklyData?.main?.temp}</div>
-        <div className="degreeStyle">
-          &deg; <sup>C</sup>
+      <img src={WeatherIcon} alt="Weather Icon" className="weatherIconStyle" />
+      {weeklyData?.main?.temp && (
+        <div className="degreeMainStyle">
+          <div className="tempStyle">{weeklyData?.main?.temp}</div>
+          <div className="degreeStyle">
+            &deg; <sup>C</sup>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="dateStyle">{moment().format("DD/MM/YY")}</div>
       <div className="dayStyle">
@@ -31,18 +33,24 @@ const LeftContainer = ({ weeklyData, dailyData }) => {
       </div>
 
       <div className="weatherDetailsMain">
-        <img src={windDirectionIcon} alt="Wind Icon" />
-        <div>
-          &nbsp; Wind &nbsp; {weeklyData?.wind?.speed} km/h &nbsp; | &nbsp;
+        <div className="weatherStyle">
+          <img src={windDirectionIcon} alt="Wind Icon" />
+          <div>
+            &nbsp; Wind &nbsp; {weeklyData?.wind?.speed} km/h &nbsp; | &nbsp;
+          </div>
         </div>
 
-        <img src={HumidityIcon} alt="Humidity Icon" />
-        <div>
-          &nbsp; Hum &nbsp; {weeklyData?.main?.humidity} % &nbsp; | &nbsp;
+        <div className="weatherStyle">
+          <img src={HumidityIcon} alt="Humidity Icon" />
+          <div>
+            &nbsp; Hum &nbsp; {weeklyData?.main?.humidity} % &nbsp; | &nbsp;
+          </div>
         </div>
 
-        <img src={RainIcon} alt="Rain Icon" />
-        <div>&nbsp; Rain {weeklyData?.rain?.["3h"]} % &nbsp; </div>
+        <div className="weatherStyle">
+          <img src={RainIcon} alt="Rain Icon" />
+          <div>&nbsp; Rain {weeklyData?.rain?.["3h"]} % &nbsp; </div>
+        </div>
       </div>
 
       <div className="cardContainer">
