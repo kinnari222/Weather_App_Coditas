@@ -13,7 +13,7 @@ const DayCards = ({ dailyData }) => {
 
   return (
     <>
-      <CardSlider dailyData = {dailyData}/>
+      <CardSlider dailyData = {dailyData} />
     </>
   );
 };
