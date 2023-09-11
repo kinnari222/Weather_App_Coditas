@@ -7,7 +7,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body, #root{
+  height: 100%;
+  background-color: rgb(210, 159, 205);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.slider{
+  width: 300px;
+  flex: 1;
+  margin-right: 2rem;
 }
