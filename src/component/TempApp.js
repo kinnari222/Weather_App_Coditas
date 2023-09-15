@@ -25,8 +25,6 @@ const TempApp = () => {
 
   const weeklyData = dailyData?.shift();
 
-  console.log("weeklyData : ", weeklyData);
-
   return (
     <>
       <div className="mainContainer">
